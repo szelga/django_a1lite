@@ -25,7 +25,7 @@ class Payment(models.Model):
         (STATUS_PAYED, _('Payed')),
     )
 
-    user = models.ForeignKey(User, verbose_name=_('User'), blank=True)
+    user = models.ForeignKey(User, verbose_name=_('User'), blank=True, null=True)
     status = models.PositiveSmallIntegerField(verbose_name=_('Status'),
         choices=STATUS_CHOICES, default=STATUS_PAY_WAITING)
 
